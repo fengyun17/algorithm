@@ -66,40 +66,9 @@ public:
     }
 };
 
-struct iterm{
-    string id;
-    int freqs;
-    list<int> locs;
-    iterm(string i, int f, int pos) : id(i), freqs(f){
-        locs.emplace_back(pos);
-    }
-    bool operator==(const iterm &o) const{
-        return id == o.id;
-    }
-    //bool operator!=(const iterm &o) const{
-    //    return id != o.id;
-    //}
-    bool operator<(const iterm &o) const{
-        return id < o.id;
-    }
-};
-
 int main(){
-    for (int i=1; i<5; i++){
-        vector<iterm> a, b, c;
-        a.emplace_back("/Users/guozhi/Desktop/rwys/code/linux/boct/tmp.c", 1, 10);
-        a.emplace_back("/Users/guozhi/Desktop/rwys/code/linux/boct/server/tbf.c", 8, 10);
-        a.emplace_back("/Users/guozhi/Desktop/rwys/code/linux/boct/server/medialib.c", 1, 10);
-        b.emplace_back("/Users/guozhi/Desktop/rwys/code/linux/boct/tmp.c", 7, 10);
-        set_difference(a.begin(), a.end(), b.begin(), b.end(), back_inserter(c));
-        for (int i=0; i<c.size(); i++){
-            cout << c[i].id << " ";
-        }
-    }
-    cout << "-------------" << endl;
     std::vector<std::string> folders = {"C:\\Users\\Documents\\file1.txt", "C:\\Users\\Documents\\file2.txt", "C:\\Users\\Pictures\\photo1.jpg"};
     solve s;
     s.pbf(folders);
-
     return 0;
 }

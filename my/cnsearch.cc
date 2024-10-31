@@ -176,7 +176,9 @@ void split(char *str, vector<string> &words){
     dfs(n);
     words.clear();
     for (int i=res[0].size()-1; i>=0; i--){
-        words.emplace_back(res[0][i]);
+        if (res[0][i]!="，" && res[0][i]!="。" && res[0][i]!="！" || res[0][i]!="？"){
+            words.emplace_back(res[0][i]);
+        }
     }
     m.clear();
     path.clear();
